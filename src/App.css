@@ -1,38 +1,409 @@
-.App {
+
+/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+/* ================================ */
+html, body {
+  font-size: 20px;
+}
+
+img {}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+a {
+  color: black;
+}
+
+[class*='__container'] {
+  max-width: 1330px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ======================================================================= */
+.header {
+  background-color: #d3b714;
+}
+
+.main-nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 20px 0 20px;
+}
+
+.header__logo img {
+  height: 50px;
+}
+
+.menu__box {
+  display: flex;
+}
+
+.menu__box li {
+  margin-left: 20px;
+}
+
+.menu__box li:first-child {
+  margin: 0;
+}
+
+.header__link {
+  transition: color 0.3s ease 0s;
+}
+
+.header__link:hover {
+  color: #a0a0a0;
+}
+
+
+/* ======================================================================= */
+.main {
+  display: flex;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.aside-left {
+  background-color: #c798b9;
+  flex: 1 0 15%;
+  padding-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content {
+  background-color: #ffffff;
+  padding-top: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content__text {
+  margin: 0px 20px 0 20px;
+}
+
+.aside-right {
+  background-color: #9cb1c7;
+  flex: 1 0 15%;
+  padding-top: 20px;
+}
+
+.content__title {
+  margin: 20px 0 0 0;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ======================================================================= */
+.main-cards {
+  display: flex;
+  column-gap: 35px;
+  row-gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 15px 30px 15px;
+  justify-content: center;
+  font-size: 15px;
+  overflow: auto;
+}
+
+.card h3 {
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.card p {
+  padding: 10px 15px;
+  flex: 1 1 auto;
+}
+
+.card img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 10px solid #c7b7b7;
+  object-fit: cover;
+}
+
+.card {
+  height: 320px;
+  overflow: auto;
+  padding: 15px 0 15px 0;
+  border-radius: 20px;
+  border: 1px solid black;
+  flex: 1 1 calc(33.333% - 75px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+  display: block;
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: #685174;
+  transition: background-color 0.3s ease 0s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn:hover {
+  background-color: #501272;
+}
+
+.footer {
+  background-color: #84e984;
+  padding: 10px 0 10px;
+  text-align: center;
+}
+/* ============================= */
+#menu__toggle{
+display: none;
+}
+
+
+
+@media (max-width: 992px) {
+  .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
   }
-  to {
-    transform: rotate(360deg);
+
+  .main {
+      margin-top: 100px;
+  }
+
+  .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+
+  .aside-left {
+      display: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #menu__toggle {
+      display: none;
+  }
+
+  .menu__btn {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 35px;
+      right: 20px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      z-index: 1;
+  }
+
+  .menu__btn>span,
+  .menu__btn>span::before,
+  .menu__btn>span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #616161;
+  }
+
+  .menu__btn>span::before {
+      content: '';
+      top: -8px;
+  }
+
+  .menu__btn>span::after {
+      content: '';
+      top: 8px;
+  }
+
+  .menu__box {
+      display: block;
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100%;
+      margin: 0;
+      padding: 80px 0;
+      list-style: none;
+      text-align: center;
+      background-color: #ECEFF1;
+      box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+
+  .menu__item {
+      display: block;
+      padding: 12px 24px;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+  }
+
+  .menu__item:hover {
+      background-color: #CFD8DC;
+  }
+
+
+  #menu__toggle:checked~.menu__btn>span {
+      transform: rotate(45deg);
+  }
+
+  #menu__toggle:checked~.menu__btn>span::before {
+      top: 0;
+      transform: rotate(0);
+  }
+
+  #menu__toggle:checked~.menu__btn>span::after {
+      top: 0;
+      transform: rotate(90deg);
+  }
+
+  #menu__toggle:checked~.menu__box {
+      visibility: visible;
+      right: 0;
+  }
+
+  .menu__btn>span,
+  .menu__btn>span::before,
+  .menu__btn>span::after {
+      transition-duration: .25s;
+  }
+
+  .menu__box {
+      transition-duration: .25s;
+  }
+
+  .menu__item {
+      transition-duration: .25s;
+  }
+
+  .menu__box li {
+      margin-left: 0;
+  }
+
+  .card {
+      flex: 1 1 calc(50% - 75px);
+  }
+}
+
+@media (max-width: 479.98px) {
+  .aside-right {
+      display: none;
+  }
+
+  .card {
+      margin: 0 50px 0 50px;
+      flex: 1 1 calc(100% - 75px);
+  }
+  .card img {
+      height: 70px;
+      width: 70px;
+      border: 7px solid #c7b7b7;
+      object-fit: cover;
   }
 }
